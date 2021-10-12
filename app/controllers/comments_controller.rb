@@ -1,7 +1,14 @@
 class CommentsController < ApplicationController
   before_action :set_post, only: %i[ index create show accept]
+  before_action :is_user?, only: %i[ create ]
   def index
     @comments = @post.comments
+  end
+
+  def is_user?
+    unless user_signed_in?
+      redirect_to root_path notice: "permission denied"
+    end
   end
 
   def create
