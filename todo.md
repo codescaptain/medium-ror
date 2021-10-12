@@ -37,4 +37,4 @@
 
 + Comment sadece login olan kullanıcılar yapabilecek
 + Post index sayfasında hala edit destroy çıkıyor bunlar kalkacak
--     
+   
