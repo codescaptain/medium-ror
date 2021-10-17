@@ -14,8 +14,10 @@ class CommentsController < ApplicationController
   def create
     @comment = @post.comments.create(comment_params)
     @comment.update!(user: current_user)
-
-    redirect_to @post, notice: 'Comment was successfully created.'
+    respond_to do |format|
+       format.js
+      format.html { redirect_to @post, notice: 'Comment was successfully created.'}
+    end    
   end
 
   def show
