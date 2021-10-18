@@ -15,9 +15,11 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     @comment.update!(user: current_user)
     respond_to do |format|
-       format.js
-      format.html { redirect_to @post, notice: 'Comment was successfully created.'}
-    end    
+        format.html { redirect_to @post, notice: "Comment was successfully updated." }
+        format.json { render :show, status: :ok, location: @post }
+        format.js
+    end
+  
   end
 
   def show

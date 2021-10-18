@@ -10,21 +10,20 @@
   <%= @post.content %>
 </p>
 <h4>Comments</h4>
-<% @comments.each do |comment| %>
-<div style="border: solid grey 1px;margin-top: 4px;border-radius: 4px;padding: 1rem;">
-  <p><b><%= comment.title %></b></p>
-  <p ><%= comment.content %></p>
-  <p><%= comment.created_at %></p>
-  <p>Author: <%= comment.user.nickname %></p>
+
+<div id="comment_pane">
+  <% @comments.each do |comment| %>
+   <%= render 'comments/comment', comment: comment %>
+    
+  <% end %>
 </div>
-  
-<% end %>
+
 <hr>
 <% if user_signed_in? %>
   <% unless @post.user == current_user%>
     <h4>Add Comment</h4>
 
-    <%= form_with(model: [@post, @post.comments.build], local: true) do |form| %>
+    <%= form_with model: [@post, @post.comments.build], id: "comment", local: false do |form| %>
       <div class="field">
         <%= form.label :title %>
         <%= form.text_field :title %>
@@ -36,7 +35,7 @@
       </div>
 
       <div class="actions">
-        <%= form.submit %>
+        <%= form.submit "Paylaş" %>
       </div>
     <% end %>
   <% end %>
