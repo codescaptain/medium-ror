@@ -8,5 +8,11 @@ Rails.application.routes.draw do
 end
   root 'welcome#index'
   devise_for :users
+
+  resources :profile do
+    get :feed, on: :collection
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :relationships, only: [:create, :destroy]
 end
