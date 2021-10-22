@@ -18,6 +18,6 @@
 
 <h2>Accepted Comments</h2>
 <% @comments.each do |comment|%>
-	<p> <b>Title:</b> <%= comment["title"]%></p>
-  <p> <b> Post Name:</b> <%= comment["post_name"]  %>
+	<p> <b>Title:</b> <%= comment.title %></p>
+  <p> <b> Post Name:</b> <%= comment.post.title %>
 <% end %>

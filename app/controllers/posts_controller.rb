@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy up_vote down_vote ]
   before_action :is_user?, only: %i[ edit update destroy ]
 
   def is_user?
@@ -24,6 +24,24 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+  end
+
+  def up_vote
+    @post.update!(vote_count: @post.vote_count + 1)
+     
+      respond_to do |format|
+        format.html { redirect_to @post, notice: "Thanksssss" }
+        format.js
+      end
+  end
+
+  def down_vote
+    @post.update!(vote_count: @post.vote_count - 1)
+    
+     respond_to do |format|
+        format.html { redirect_to @post, notice: "Thanksssss" }
+        format.js
+      end
   end
 
   # POST /posts or /posts.json

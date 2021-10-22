@@ -17,22 +17,16 @@
   + Follower/Following count yazmali
   + Follow/Unfollow button gorulmeli
   + Paylastigi public yazilar
-  Paylastigi kabul edilmis yorumlar ve hangi kitaba oldugu
+  + Paylastigi kabul edilmis yorumlar ve hangi post oldugu
 
 # Comment accept etme gelistirmesi
-  Comment'leri artik deny da edebilelelim. Accept edilen deny gorunsun, deny edilen accept gorunsun.
-  Bir comment olusturulduktan 2 gun icerisinde accept/deny edilmezse otomatik accept edilsin.
+  + Comment'leri artik deny da edebilelelim. Accept edilen deny gorunsun, deny edilen accept gorunsun.
+  + Bir comment olusturulduktan 2 gun icerisinde accept/deny edilmezse otomatik accept edilsin.
   Bir comment accept edilirse olusturulduktan 2 gun icinde deny edilebilir.
   Bir comment deny edilirse olusturulduktan 2 gun icinde accept edilebilir.
-  Comment olusturulduktan 2 gunden sonra accept ve deny yapilamaz, comment otomatik accept olur.
+  
 
 # Article Voting
-  Article'lara voting eklenecek. Login olan kullanicilar article'larini vote'layacabilecek + - olarak yapilabilirsiniz. Tasarim size kalmis. Burada JS ile yapmaniza gerek yok isteyen yapabilir. (bonus)
+  + Article'lara voting eklenecek. Login olan kullanicilar article'larini vote'layacabilecek + - olarak yapilabilirsiniz. Tasarim size kalmis. Burada JS ile yapmaniza gerek yok isteyen yapabilir. (bonus)
 
-
-### Dikkat edilecekler
-
-- Kod icerisinde bahsettigimiz butun best practice'ler uygulanmali.
-- Tasarim gerekli degil cunku bahsetmedik.
-- Scaffold kullanabilirsiniz ancak gereksiz kod gormek istemiyorum.
    

@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   get 'profile/index/:user_id', to: 'profile#index', as: 'profile' 
   get 'dashboard/index'
   resources :posts do
-    resources :comments do
+     patch :up_vote, on: :member
+     patch :down_vote, on: :member
+   resources :comments do
      patch :accept, on: :member
+     patch :deny,   on: :member
   end
 end
   root 'welcome#index'
